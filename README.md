@@ -4,7 +4,7 @@ An end-to-end machine learning pipeline and interactive web application that pre
 
 Unlike standard academic exercises (e.g., the Ames Housing dataset), this project processes, cleans, and merges **three distinct, real-world government datasets** covering nearly one million local property records to train a Random Forest model on ~45,000 qualified residential sales transactions.
 
-**[🚀 Live Interactive App →](https://your-app-url.streamlit.app)** *(replace with your Streamlit URL)*
+**[🚀 Live Interactive App →][(https://your-app-url.streamlit.app)** *(replace with your Streamlit URL)*](https://miamidadepropertyappraisal-kyf7bqeregtyljqfdx3o7n.streamlit.app)
 
 ---
 
@@ -48,9 +48,9 @@ Raw data fields were transformed into behavioral and structural metrics that bet
 ### 3. Model Selection & Performance
 A **Random Forest Regressor** was selected over Linear Regression to better capture non-linear relationships (e.g., the compounding value of specific zip codes mixed with modern renovations).
 
-* **Algorithm:** Random Forest Regressor (`n_estimators=300`, `max_depth=25`, `min_samples_leaf=3`)
-* **R² Score:** ~0.86
-* **Mean Absolute Error (MAE):** ~$68,000 (Highly accurate for the standard suburban market segment)
+* **Algorithm:** Random Forest Regressor (`n_estimators=100`, `max_depth=20`, `min_samples_leaf=3`)
+* **R² Score:** ~0.77
+* **Mean Absolute Error (MAE):** ~$100,000 (~18% of median sale price)
 * **Training Volume:** ~45,000 records
 
 ---
