@@ -4,7 +4,7 @@ An end-to-end machine learning pipeline and interactive web application that pre
 
 Unlike standard academic exercises (e.g., the Ames Housing dataset), this project processes, cleans, and merges **three distinct, real-world government datasets** covering nearly one million local property records to train a Random Forest model on ~45,000 qualified residential sales transactions.
 
-**[🚀 Live Interactive App →][(https://your-app-url.streamlit.app)** *(replace with your Streamlit URL)*](https://miamidadepropertyappraisal-kyf7bqeregtyljqfdx3o7n.streamlit.app)
+**[🚀 Live Interactive App →][(https://your-app-url.streamlit.app)](https://miamidadepropertyappraisal-kyf7bqeregtyljqfdx3o7n.streamlit.app)
 
 ---
 
