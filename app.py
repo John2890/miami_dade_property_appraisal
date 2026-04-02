@@ -58,6 +58,15 @@ with col2:
     total_baths = st.number_input("Total Bathrooms", min_value=1.0, max_value=10.0, value=2.0, step=0.5)
     floors = st.number_input("Floors", min_value=1, max_value=50, value=1, step=1)
     year_built = st.number_input("Year Built", min_value=1900, max_value=2026, value=1990, step=1)
+    
+    # --- NEW: Renovation Logic ---
+    st.write("") # slight spacing
+    is_renovated = st.checkbox("Property was renovated / updated")
+    if is_renovated:
+        # Constrain the min_value so they can't renovate before it was built
+        eff_year_built = st.number_input("Year Renovated", min_value=year_built, max_value=2026, value=2020, step=1)
+    else:
+        eff_year_built = year_built
 
 num_buildings = st.number_input("Number of Buildings on Property", min_value=1, max_value=10, value=1, step=1)
 
@@ -69,9 +78,9 @@ if st.button("💰 Predict Sale Price", use_container_width=True):
     # Calculate derived features
     current_year = datetime.now().year
     building_age = current_year - year_built
-    eff_age = building_age  # effective age defaults to actual age
-    is_condo = 1 if property_type == "Condo" else 0
-
+    eff_age = current_year - eff_year_built  # <-- Updated this line
+    is_condo = 1 if property_type == "Condo" else 0# Calculate derived features
+    
     # Guard against division by zero
     sqft_per_bedroom = living_sqft / bedrooms if bedrooms > 0 else living_sqft
     bath_bed_ratio = total_baths / bedrooms if bedrooms > 0 else total_baths
